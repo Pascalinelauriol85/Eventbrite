@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @attendance.user.first_name %> et tu es bien inscrit à l'évennement  <%=@attendance.title.capitalize%> !</h1>
+        <p>
+      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+    </p>
+    <p> À très vite sur monsite.fr !
+  </body>
+</html>

@@ -21,12 +21,12 @@ end
 
 
 10.times do |i|
-  Event.create(start_date:Faker::Date.between(from: Date.today, to:100.days.ago),
+  e = Event.create(start_date:Faker::Date.between(from: Date.today, to:100.days.after),
   duration:[5,10,15,20,25,30,35,40,45].sample,
   title:Faker::Movies::BackToTheFuture.quote,
   description:Faker::TvShows::NewGirl.quote,
-  price:rand(1..1000),l
-  ocation:Faker::JapaneseMedia::Naruto.character,
+  price:rand(1..1000),
+  location:Faker::JapaneseMedia::Naruto.character,
   admin_id:User.all.sample.id)
   puts "#{i+1} events created"
 end
@@ -34,6 +34,6 @@ end
 
 50.times do |i|
   Attendance.create(user_id:User.all.sample.id,
-    event_id:User.all.sample.id)
+    event_id:Event.all.sample.id, stripe_customer_id:"1569#{i}")
     puts "#{i+1} attendance created"  
 end
